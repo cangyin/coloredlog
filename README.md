@@ -5,21 +5,25 @@ Provides `ConsoleHandler()` for working with `logging` module to get colored log
 ## 1. Colorize your logging output
 ```python
 # you can just do `from colorlog import *`
-import logging, colorlog
+import logging, coloredlog
+logging.basicConfig(
+    format='%(asctime)s %(filename)s:%(lineno)d [%(levelname)s] %(message)s',
+    handlers=[coloredlog.ConsoleHandler()],
+    level=logging.DEBUG
+)
 logger = logging.getLogger(__name__)
-logger.addHandler(colorlog.ConsoleHandler())
 
-logger.setLevel(logging.DEBUG)
-logger.debug('debug')
-logger.info('info')
-logger.log(colorlog.NOTIFY, 'notification') # new log level defined in `colorlogger`
-logger.warning('warning')
-logger.error('error')
+logger.info('logging started')
+logger.debug('debug message')
+logger.info('informative')
+logger.log(coloredlog.NOTIFY, 'notification')
+logger.warning('a warning message')
+logger.error('message on error occurred')
 try:
-    raise 'An exception!'
+    raise RuntimeError('An exception!')
 except:
-    logger.exception('exception')
-logger.critical('critical')
+    logger.exception('Exception:')
+logger.critical('THIS IS CRITICAL')
 
 ```
 **Result on Windows 10**
@@ -28,7 +32,7 @@ logger.critical('critical')
 
 ## 2. Decorate your normal message
 ```python
-from colorlogger.color import *
+from coloredlog.color import *
 
 print(deco('Hello, ', 0x011, bold=True) + reset() + 'world!')
 print(deco('Hello, ', reverse=True) + reset() + 'world!')
@@ -48,7 +52,7 @@ _For more infomation on parameter rules for deco( ), please refer to the docstri
 ## 3. For **intensive** use case 
 Since a complete run-through of `deco()` can be a bit time-consuming under intensive use case, you may consider method below to speed up the operation of `deco()`
 ```python
-from colorlogger.color import *
+from coloredlog.color import *
 
 const_deco = deco('', FG_BLUE, BG_WHITE, bold=True)
 # simulates intensive use case

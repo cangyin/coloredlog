@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="coloredlog",
-    version="0.2",
+    version="0.2.1",
     author="CangYin",
     author_email="excangyin@gmail.com",
     description="Colorize your console output.",
