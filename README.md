@@ -44,7 +44,7 @@ print(deco('Hello, ', FG_MAGENTA, bold=True) + reset() + 'w...')
 warning("emmm, seems there is a small proble...")
 error('Unknown error!')
 ```
-_For more infomation on parameter rules for deco( ), please refer to the docstring._
+_For more information on parameter rules for deco( ), please refer to the docstring._
 
 **Result on Windows 10**
 ![result](https://raw.githubusercontent.com/cangyin/coloredlog/master/snapshots/snapshot2.png)
