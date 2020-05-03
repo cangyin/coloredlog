@@ -27,7 +27,7 @@ logger.critical('THIS IS CRITICAL')
 
 ```
 **Result on Windows 10**
-![result](./snapshots/snapshot.png)
+![result](https://raw.githubusercontent.com/cangyin/coloredlog/master/snapshots/snapshot1.png)
 
 
 ## 2. Decorate your normal message
@@ -47,7 +47,7 @@ error('Unknown error!')
 _For more infomation on parameter rules for deco( ), please refer to the docstring._
 
 **Result on Windows 10**
-![result](./snapshots/snapshot2.png)
+![result](https://raw.githubusercontent.com/cangyin/coloredlog/master/snapshots/snapshot2.png)
 
 ## 3. For **intensive** use case 
 Since a complete run-through of `deco()` can be a bit time-consuming under intensive use case, you may consider method below to speed up the operation of `deco()`
@@ -62,7 +62,7 @@ for i in range(10):
 print(reset()) # reset to normal color
 ```
 **Result on Windows 10**
-![result](./snapshots/snapshot3.png)
+![result](https://raw.githubusercontent.com/cangyin/coloredlog/master/snapshots/snapshot3.png)
 
 
 # Tested on
